@@ -70,23 +70,3 @@ Found code how to add github octocat on the website and did it. Couldn't resist.
 
 
 </html>
-
-
-
-
-
-
-
-<?php
-
-
-
-
-
-
-
-
-
-
-?>
-
