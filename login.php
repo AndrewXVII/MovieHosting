@@ -1,18 +1,3 @@
-<?php
-if(isset($errors)){
-    echo "<h1>Error</h1>";
-    foreach($errors as $msg){
-        echo "- $msg<br>\n";
-    }
-    echo "Try again";
-}
-
-
-
-
-?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -68,18 +53,7 @@ border-bottom:black;
   		Don't have an account yet? <a href="register.php">Log In <a>
   	
     </p>
-
-
 </div>
 </div>
-
-
-
 </body>
-
-
-
-
-
 </html>
-
