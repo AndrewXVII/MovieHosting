@@ -8,14 +8,6 @@ if(isset($errors)){
 }
 
 
-if(isset($_POST['submit'])){
-    $username = htmlentities($_POST['username']);
-    $lastname = htmlentities($_POST['lastname']);
-    $email = htmlentities($_POST['email']);
-    $pass = hash('sha512',$_POST['password']);
-    
-    setcookie('username', $username, 'lastname' , $lastname , 'email' , $email , 'password' , $pass ,   time()+100);
-}
 
 
 ?>
