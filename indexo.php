@@ -1,4 +1,4 @@
-<php?
+<?php
 require("login.php");
 require("register.php");
 
