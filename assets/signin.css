@@ -1,0 +1,68 @@
+html,body{
+
+
+height: 100%;
+padding: 0;
+margin:0;
+background-color:#222422;
+box-sizing: border-box;
+
+
+}
+
+
+
+.signIn {
+    
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    background-color: rgb(46, 53, 47);
+    min-height: 520px;
+    max-height: 100%;
+    width: 420px;
+    box-shadow: rgba(204, 144, 144, 0.1) 0 1px 2px;
+    overflow-y:auto;
+}
+
+
+.column form {
+    display: flex;
+    flex-direction: column;
+}
+.column form input[type = "text"],
+
+.column form input[type = "email"],
+
+.column form input[type = "password"]{
+
+font-size:15px;
+font-family: 'Times New Roman', Times, serif;
+background: rgb(47, 65, 33);
+border:none;
+border-bottom:black;
+
+margin: 2px 0 ;
+
+color:burlywood;
+
+}
+
+
+
+.column form input[type = "submit"]{
+    font-size:15px;
+font-family: 'Times New Roman', Times, serif;
+background: rgb(255, 0, 0);
+border:none;
+border-bottom:1px;
+color:cornsilk;
+
+
+}
+
+

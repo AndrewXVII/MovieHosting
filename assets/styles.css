@@ -1,0 +1,146 @@
+html , body {
+    background-color:#222422;
+    font-size: 14px;
+    font-style: normal;
+    
+  margin: 0;
+justify-content: space-between;
+    
+    
+}
+
+
+
+
+
+
+a{
+    color:white;
+    text-decoration: none;
+   
+}
+.more:hover{
+    color:antiquewhite;
+    background: linear-gradient(to right, #a38b96 , #5e3a97,  #8c0b97);
+    cursor: pointer;
+    
+  
+   
+}
+
+
+#header2{
+    background-color: black;
+    position:fixed;
+    width: 14%;
+    height: 100%;
+    z-index: 2;
+    padding-left:30px;
+    
+    
+}
+
+
+
+#header {
+    font-size: large;
+    padding: 10px;
+    margin: 2em;
+ 
+    flex-direction: column;
+    display:block;
+    width: 140px;
+    height: 33px;
+    background-color: #20202b;
+    word-spacing: 6px;
+    border-radius: 15px;
+   
+   text-align: center;
+   
+
+}
+  
+#signup{
+    border-radius: 15px;
+    background-color: #222233;
+    font-size: large;
+    padding: 10px;
+    margin: 10px;
+    flex-direction: column;
+    display:block;
+    width: 100px;
+    height: 33px;
+    text-align: center;
+    
+}
+
+#login{
+    border-radius: 15px;
+    background-color: #222233;
+    font-size: large;
+    padding: 10px;
+    margin:10px;
+    flex-direction: column;
+    display:block;
+    width: 100px;
+    height: 33px;
+    text-align: center;
+
+}
+
+
+
+#warning {
+    
+    background-color: rgb(0, 24, 56);
+   
+    text-align: center;
+    color: rgb(243, 215, 215);
+    padding: 16px;
+    
+}
+
+
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   position:fixed;
+  width:100%;
+  text-align: center;
+    
+}
+
+
+
+.searchbar button {
+    float:left;
+  background: #ddd;
+  
+  
+}
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+}
+@keyframes octocat-wave {
+    0%, 100% {
+        transform: rotate(0)
+    }
+    20%,
+    60% {
+        transform: rotate(-25deg)
+    }
+    40%,
+    80% {
+        transform: rotate(10deg)
+    }
+}
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none
+    }
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+    }
+}
