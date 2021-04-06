@@ -1,18 +1,10 @@
 <?php
 require_once("includes/classes/Sassdata.php");
 
-$errors = [];
-
-if(isset($errors) && !empty($errors)){
-    echo "<h1>Error</h1>";
-    foreach($errors as $msg){
-        echo "- $msg<br>\n";
-    }
-    echo "Try again";
-}
 
 
 if(isset($_POST['submit'])){
+    $ERRORS = [];
     $name = Sassdata::nameCorrection($_POST["username"]);
     $lastname = Sassdata::lsnameCorrection($_POST['lastname']);
     $email = Sassdata::emailCorrection($_POST['email']);
