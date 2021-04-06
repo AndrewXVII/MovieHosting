@@ -3,7 +3,7 @@ require_once("includes/classes/Sassdata.php");
 
 $errors = [];
 
-if(isset($errors)){
+if(isset($errors) && !empty($errors)){
     echo "<h1>Error</h1>";
     foreach($errors as $msg){
         echo "- $msg<br>\n";
