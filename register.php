@@ -1,22 +1,39 @@
+
 <?php
-require_once("includes/classes/Sassdata.php");
+include("includes/classes/Sassdata.php");
+include("includes/classes/connection.php");
+include('includes/classes/validation.php');
 
 
+
+
+
+$validate = new Validation($dbcon);
 
 if(isset($_POST['submit'])){
-    $ERRORS = [];
-    $name = Sassdata::nameCorrection($_POST["username"]);
-    $lastname = Sassdata::lsnameCorrection($_POST['lastname']);
-    $email = Sassdata::emailCorrection($_POST['email']);
-    $pass = Sassdata::pwCorrection($_POST['password']);
-    $usernmaae = Sassdata::usernameCorrection($_POST["username"]);
-    
-    
+
+   
+
+$name = Sassdata::nameCorrection($_POST['first_name']);
+$lastname = Sassdata::lsnameCorrection($_POST['lastname']);
+$username = Sassdata::usernameCorrection($_POST["username"]);
+$email = Sassdata::emailCorrection($_POST['email']);
+$email2= Sassdata::email2Correction($_POST['email2']);
+$pass = Sassdata::pwCorrection($_POST['pass']);
+$confirmpassword = Sassdata::pw2Correction($_POST["confirmpassword"]);
+
+$validate->ValidateName($name);
+$validate->ValidateLastName($lastname);
+$validate->ValidateUsername($username);
+$validate->ValidateEmail($email,$email2);
+
+
 }
 
 
 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -54,18 +71,33 @@ border-bottom:black;
     <div class = "column">
 
 
-    <form method = "POST"    action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> ">
+    <form method = "POST">
 
 
-<input autocomplete="off"  type = "text" name = "username" placeholder = "Enter Name"  required pattern = "(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Username must contain at least 6 characters."  required>   <!-- placeholder создает серый текст в форме который указывает стиль ввода -->
+    <?php
+    echo($validate->ShowErrors("Please match the requested format"));
+    ?>
+ 
+<input autocomplete="off"  type = "text" name = "first_name" placeholder = "Enter Name"  required>   <!-- placeholder создает серый текст в форме который указывает стиль ввода -->
 <br><br> 
 
-<input  autocomplete="off" type = "text" name = "lastname"  placeholder = "Enter Lastname" required pattern = "(?=.*[a-z])(?=.*[A-Z]).{6,}" title = "Lastname must contain at least 6 characters." required>
+<?php   echo($validate->ShowErrors("Please match the requested format")); ?>
+
+<input  autocomplete="off" type = "text" name = "lastname"  placeholder = "Enter Lastname" required>
 <br><br>
 
-<input autocomplete = "off" type = "text" name = "username" placeholder = "Enter Username" required pattern = "(?=.*[a-z])(?=.*[A-Z]).{6,}" title =  "Nickname must cointain at least 6 characters"  required>
+
+
+<?php   echo($validate->ShowErrors("Please match the requested format")); ?>
+
+
+
+<input autocomplete = "off" type = "text" name = "username" placeholder = "Enter Username" required>
 
 <br><br>
+
+
+<?php   echo($validate->ShowErrors("Emails doesn't match")); ?>
 
  <input  autocomplete="off" type="email" name="email"  placeholder = "Enter E-mail" required>
 <br><br>
@@ -74,7 +106,7 @@ border-bottom:black;
 
 <br><br>
 
-<input autocomplete="off"  type = "password" name = "password" placeholder = "Enter password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,}" title="At least 9 characters" required  >
+<input autocomplete="off"  type = "password" name = "pass" placeholder = "Enter password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,}" title="At least 9 characters" required  >
 
 <br><br>
 
@@ -90,17 +122,14 @@ border-bottom:black;
   	
     </p>
 
+    </form>
+
 
 </div>
 </div>
-
-
 
 </body>
-
-
-
-
-
 </html>
+
+
 
