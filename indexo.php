@@ -1,9 +1,5 @@
-<?php
-require("login.php");
-require("register.php");
 
 
-?>
 
 <!DOCTYPE html>
 <html>
@@ -12,16 +8,12 @@ require("register.php");
 <title>MovieHosting</title>
 
 <link rel="stylesheet" type = "text/css" href="assets/styles.css">
+
 <link rel="shortcut icon" href="ikon.ico" type="image/x-icon" />
 </head>
 
 
 <div id="warning">!!!This site is still under heavy and operose development!!!</div>
-
-
-
-
-
 <div class="searchbar">
 	<form action="/" method="post">
 		<input type="text" placeholder="Search..." name="search">
@@ -44,11 +36,9 @@ require("register.php");
     <div id="header2" >
            
        
-<a  href = "www.google.com" button id="header" class="more" type="button">Top rated movies</button></a>
+    <a  href = "topM.php" button id="header" class="more" type="button">Top rated movies</button></a>
 
-<a href = "www.google.com" button id="header" class="more" type="button">Top rated series</button></a>
-
-<a href = "www.google.com" button id="header" class="more" type="button">Support</button></a>
+<a href = "support.php" button id="header" class="more" type="button">Support</button></a>
 
 
 
@@ -70,3 +60,9 @@ Found code how to add github octocat on the website and did it. Couldn't resist.
 
 
 </html>
+
+
+<?php
+
+
+?>
