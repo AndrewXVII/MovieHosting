@@ -1,3 +1,33 @@
+<?php
+
+require_once("includes/classes/Sassdata.php");
+require_once("includes/classes/connection.php");
+require_once('includes/classes/validation.php');
+
+
+$validate = new Validation($dbcon);
+
+if(isset($_POST['submit'])){
+
+    
+    $email = Sassdata::emailCorrection($_POST['email']);
+    $password = Sassdata::pwCorrection($_POST['password']);
+  
+    
+    $loginsuccess = $validate->login($email,$password);
+    
+    if($loginsuccess){
+       
+        header("Location: indexo.php");
+
+
+}
+
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +51,7 @@ select:-webkit-autofill:focus {
     border:none;
 border-bottom:black;
   -webkit-text-fill-color: rgb(222,184,135);
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+
 
 }
 
@@ -31,29 +61,43 @@ border-bottom:black;
 <div class ="signIn">
     <div class = "column">
 
+    <form method="POST"   >
 
-    <form method = "POST"  action = "validation.php"  action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> ">
 
 
- <input  autocomplete="off" type="email" name="email"  placeholder = "Enter E-mail" required>
+    <?php   echo $validate->ShowErrors("LOGIN FAILED"); ?>
+ <input   type="email" name="email"  placeholder = "Enter E-mail" required>
 <br><br>
 
 
 
-<input autocomplete="off"  type = "password" name = "password" placeholder = "Enter password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,}" title="At least 9 characters" required  >
+<input   type = "password" name = "password" placeholder = "Enter password"  required  >
 
 <br><br>
 
 
-<input autocomplete="off" type = "submit" name = "submit" value = "Login">
+<input  type = "submit" name = "submit" value = "Login">
+
+    </form>
 
 
 <br><br>
 <p>
-  		Don't have an account yet? <a href="register.php">Log In <a>
+  		Don't have an account yet? <a href="register.php">Sign UP! <a>
   	
     </p>
+
+
 </div>
 </div>
+
+
+
 </body>
+
+
+
+
+
 </html>
+
