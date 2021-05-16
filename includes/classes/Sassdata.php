@@ -9,7 +9,9 @@ class Sassdata{
         //trim don't remove spaces inside the string
         $inputBox = htmlentities($inputBox);
         $inputBox = ucfirst($inputBox);
-        
+        $inputBox = filter_var($inputBox, FILTER_SANITIZE_STRING);
+
+  
         return $inputBox;
 }
 public static function usernameCorrection ($inputBox){  
@@ -33,10 +35,22 @@ public static function pwCorrection($inputBox){
 
 }
 
+
+
+
+
+
 public static function emailCorrection($inputBox){
 
     $inputBox = str_replace(" " , "" , $inputBox);
     $inputBox = htmlentities($inputBox);
+    return $inputBox;
+
+}
+
+public static function pw2Correction($inputBox){
+    $inputBox = hash('haval256,4', $_POST["confirmpassword"]);
+    $inputBox = str_replace(" ", "", $inputBox); 
     return $inputBox;
 
 }
