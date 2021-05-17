@@ -1,40 +1,34 @@
 
 <?php
-include("includes/classes/Sassdata.php");
-include("includes/classes/connection.php");
-include('includes/classes/validation.php');
 
-
-
-
+require_once("includes/classes/Sassdata.php");
+require_once("includes/classes/connection.php");
+require_once('includes/classes/validation.php');
 
 $validate = new Validation($dbcon);
 
 if(isset($_POST['submit'])){
-
-   
-
 $name = Sassdata::nameCorrection($_POST['first_name']);
 $lastname = Sassdata::lsnameCorrection($_POST['lastname']);
 $username = Sassdata::usernameCorrection($_POST["username"]);
 $email = Sassdata::emailCorrection($_POST['email']);
-$email2= Sassdata::email2Correction($_POST['email2']);
-$pass = Sassdata::pwCorrection($_POST['pass']);
+$pass = Sassdata::pwCorrection($_POST['password']);
 $confirmpassword = Sassdata::pw2Correction($_POST["confirmpassword"]);
 
-$validate->ValidateName($name);
-$validate->ValidateLastName($lastname);
-$validate->ValidateUsername($username);
-$validate->ValidateEmail($email,$email2);
+$loginsuccess = $validate->ValidationFunc($name,$lastname,$username,$email,$pass,$confirmpassword);
 
+if($loginsuccess ){
+
+    $_SESSION["userLoggedIn"] == $email;
+
+    
+    header("Location: indexo.php");
 
 }
 
-
+}
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -74,9 +68,9 @@ border-bottom:black;
     <form method = "POST">
 
 
-    <?php
+<?php
     echo($validate->ShowErrors("Please match the requested format"));
-    ?>
+?>
  
 <input autocomplete="off"  type = "text" name = "first_name" placeholder = "Enter Name"  required>   <!-- placeholder создает серый текст в форме который указывает стиль ввода -->
 <br><br> 
@@ -86,27 +80,24 @@ border-bottom:black;
 <input  autocomplete="off" type = "text" name = "lastname"  placeholder = "Enter Lastname" required>
 <br><br>
 
-
-
-<?php   echo($validate->ShowErrors("Please match the requested format")); ?>
-
-
+<?php   echo($validate->ShowErrors("USERNAME ALREADY TAKEN")); ?>
 
 <input autocomplete = "off" type = "text" name = "username" placeholder = "Enter Username" required>
 
 <br><br>
 
 
-<?php   echo($validate->ShowErrors("Emails doesn't match")); ?>
+
 
  <input  autocomplete="off" type="email" name="email"  placeholder = "Enter E-mail" required>
-<br><br>
-
-<input autocomplete="off"  type="email" name="email2"  placeholder = "Confirm E-mail" required>
 
 <br><br>
 
-<input autocomplete="off"  type = "password" name = "pass" placeholder = "Enter password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,}" title="At least 9 characters" required  >
+
+<?php echo($validate->ShowErrors("PASSWORDS DOESN'T MATCH!")); ?>
+
+
+<input autocomplete="off"  type = "password" name = "password" placeholder = "Enter password" required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,})" title="At least 9 characters" required  >
 
 <br><br>
 
@@ -118,18 +109,12 @@ border-bottom:black;
 
 <br><br>
 <p>
-  		Already a member? <a href="login.php">Sign in <a>
+  		Already a member? <a href="login.php">Log In <a>
   	
     </p>
 
     </form>
-
-
 </div>
 </div>
-
 </body>
 </html>
-
-
-
