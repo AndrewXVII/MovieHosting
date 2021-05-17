@@ -1,5 +1,9 @@
 <?php
-$dsn = 'mysql:dbname=mhusers;host=localhost';
+ob_start(); 
+session_start();
+
+
+$dsn = 'mysql:dbname=moviestream;host=localhost';
 $dbuser = 'root';
 $dbpass = '';
 
