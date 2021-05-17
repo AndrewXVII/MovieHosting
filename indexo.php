@@ -1,4 +1,18 @@
 
+<?php
+
+
+require_once("includes/classes/connection.php");
+
+if(isset($_SESSION["userLoggedIn"])) {
+    header("Location: indexo.php");
+
+}
+
+
+
+?>
+
 
 
 <!DOCTYPE html>
@@ -23,14 +37,13 @@
 
 
 
-<a href="login.php" style = "float:right" id = "login" class="more">
-    
-      Login</a> 
-    
 
 
-<a href = "register.php"  style = "float:right" id = "signup" class="more">
-    Signup</a>
+
+<a  style = "float:right"  href="logout.php" id = "signup" class="more">Log Out</a>
+
+
+
 
    
     <div id="header2" >
