@@ -5,6 +5,9 @@ require_once("includes/classes/connection.php");
 require_once('includes/classes/validation.php');
 
 
+
+
+
 $validate = new Validation($dbcon);
 
 if(isset($_POST['submit'])){
@@ -17,6 +20,8 @@ if(isset($_POST['submit'])){
     $loginsuccess = $validate->login($email,$password);
     
     if($loginsuccess){
+
+        $_SESSION["userLoggedIn"] == $email;
        
         header("Location: indexo.php");
 
