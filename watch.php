@@ -13,18 +13,14 @@
 <?php
 
 
+<?php
+    
 require_once("includes/classes/connection.php");
 require_once("includes/classes/vidPlayer.php");
 require_once("includes/classes/video.php");
 
-if(!isset($_GET['id'])){
-    echo "no id set";
-  
-}
 
-?>
 
-<?php
 $movie = new Video($dbcon , $_GET['id'] );
 
 
