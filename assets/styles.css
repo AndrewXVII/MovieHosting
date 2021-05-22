@@ -14,6 +14,7 @@ justify-content: space-between;
 
 
 
+
 a{
     color:white;
     text-decoration: none;
@@ -21,7 +22,7 @@ a{
 }
 .more:hover{
     color:antiquewhite;
-    background: linear-gradient(to right, #a38b96 , #5e3a97,  #8c0b97);
+    background: linear-gradient(to right, #f0b05c , #e77548 , #dd6130  , #df470b );
     cursor: pointer;
     
   
@@ -59,35 +60,59 @@ a{
    
 
 }
-  
-#signup{
-    border-radius: 15px;
-    background-color: #222233;
-    font-size: large;
-    padding: 10px;
-    margin: 10px;
-    flex-direction: column;
-    display:block;
-    width: 100px;
-    height: 33px;
-    text-align: center;
+
+
+
+a+a {
+    margin-left: 15px;
+  }
+
+
+
+
+.div-video-container {
+   
+    
+    gap: 9rem 1rem;
+    margin:0 25rem;
+    position:absolute;
+    padding: 5rem 0 ; 
+    border-top: 4px solid #222233;
+    grid-template-columns: 8ch auto;
+    
+    
     
 }
 
-#login{
-    border-radius: 15px;
-    background-color: #222233;
-    font-size: large;
-    padding: 10px;
-    margin:10px;
-    flex-direction: column;
-    display:block;
-    width: 100px;
-    height: 33px;
-    text-align: center;
 
-}
+img {
+    
+    object-fit: cover;
+  }
 
+
+  #movieDescription{
+      color:antiquewhite;
+      text-align: center;
+      text-justify: inter-word;
+      font-size: 20px;
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+      font-family: 'Times New Roman', Times, serif;
+
+  }
+
+ 
+
+
+    video{
+        display: block;
+        margin: 70px auto;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+
+    }
 
 
 #warning {
@@ -103,6 +128,7 @@ a{
 
 .searchbar{
     display: flex;
+    padding: 1rem 0 ; 
     flex-direction: row;
     justify-content: center;
    position:fixed;
