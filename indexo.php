@@ -1,23 +1,22 @@
 
 <?php
-
-
 require_once("includes/classes/connection.php");
+require_once("includes/classes/vidPlayer.php");
+require_once("includes/classes/video.php");
 
 if(isset($_SESSION["userLoggedIn"])) {
     header("Location: indexo.php");
 
 }
 
-
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
     <head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta charset="utf-8">
 <title>MovieHosting</title>
 
@@ -36,26 +35,42 @@ if(isset($_SESSION["userLoggedIn"])) {
 </div>
 
 
+<div class = "div-video-container">
+
+<a href = "watch.php?id=1" > 
+  <img alt="Harakiri" src="movieDes/images/harakiri.jpg" style="object-fit:cover;  width:300px; height:500px" align="top">
+        </a>
+
+<a href = "watch.php?id=5" >
+    <img alt="Seven Samurai" src="movieDes/images/seven_samurai.jpg" style="object-fit:cover;  width:300px; height:500px">
+        </a>
 
 
 
-
-<a  style = "float:right"  href="logout.php" id = "signup" class="more">Log Out</a>
-
-
-
-
-   
-    <div id="header2" >
-           
-       
-    <a  href = "topM.php" button id="header" class="more" type="button">Top rated movies</button></a>
-
-<a href = "support.php" button id="header" class="more" type="button">Support</button></a>
+<a href = "watch.php?id=2" >
+    <img alt="Guns Of Navarone" src="movieDes/images/guns_of_navarone.jpg" style="object-fit:cover;  width:300px; height:500px">
+        </a>
 
 
+<a href = "watch.php?id=1" > 
+  <img alt="Harakiri" src="movieDes/images/harakiri.jpg" style="object-fit:cover;  width:300px; height:500px"> 
+        </a>
 
+<a href = "watch.php?id=1" > 
+  <img alt="Harakiri" src="movieDes/images/harakiri.jpg" style="object-fit:cover;  width:300px; height:500px">
+        </a>
 </div>
+
+
+
+
+
+
+<a  style = "float:right" button id="header"  href="logout.php"  class="more">Log Out</a>
+    <div id="header2" >
+           <a  href = "topM.php" button id="header" class="more" type="button">Top rated movies</button></a>
+                <a href = "support.php" button id="header" class="more" type="button">Support</button></a>
+    </div>
 
 <!--
 Found code how to add github octocat on the website and did it. Couldn't resist.
@@ -73,9 +88,3 @@ Found code how to add github octocat on the website and did it. Couldn't resist.
 
 
 </html>
-
-
-<?php
-
-
-?>
