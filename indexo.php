@@ -27,18 +27,30 @@ if(isset($_SESSION["userLoggedIn"])) {
 
 
 <div id="warning">!!!This site is still under heavy and operose development!!!</div>
-<div class="searchbar">
+            <div id="userButtons">
+                <a  style = "float:right" button id="header"  href="logout.php"  class="more">Log Out</a>
+                
+                  
+                
+            </div>
+       
+       
+     <div class="searchbar">
 	<form action="/" method="post">
 		<input type="text" placeholder="Search..." name="search">
-		<button type="submit">Find</button>
+		<button type="submit">Search</button>
 	</form>
 </div>
+
+
+
+
 
 
 <div class = "div-video-container">
 
 <a href = "watch.php?id=1" > 
-  <img alt="Harakiri" src="movieDes/images/harakiri.jpg" style="object-fit:cover;  width:300px; height:500px" align="top">
+  <img alt="Harakiri" src="movieDes/images/harakiri.jpg" style="object-fit:cover;  width:300px; height:500px">
         </a>
 
 <a href = "watch.php?id=5" >
@@ -59,19 +71,16 @@ if(isset($_SESSION["userLoggedIn"])) {
 <a href = "watch.php?id=1" > 
   <img alt="Harakiri" src="movieDes/images/harakiri.jpg" style="object-fit:cover;  width:300px; height:500px">
         </a>
+
+
+
 </div>
 
 
+  
 
 
-
-
-<a  style = "float:right" button id="header"  href="logout.php"  class="more">Log Out</a>
-    <div id="header2" >
-           <a  href = "topM.php" button id="header" class="more" type="button">Top rated movies</button></a>
-                <a href = "support.php" button id="header" class="more" type="button">Support</button></a>
-    </div>
-
+    
 <!--
 Found code how to add github octocat on the website and did it. Couldn't resist.
     -->
@@ -85,6 +94,8 @@ Found code how to add github octocat on the website and did it. Couldn't resist.
         </g>
     </svg>
 </a>
+
+
 
 
 </html>
