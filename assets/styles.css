@@ -1,11 +1,9 @@
 html , body {
+    font-family: 'Times New Roman', Times, serif;
     background-color:#222422;
     font-size: 14px;
     font-style: normal;
-    
-  margin: 0;
-justify-content: space-between;
-    
+    margin: 0;
     
 }
 
@@ -32,10 +30,10 @@ a{
 
 #header2{
     background-color: black;
-    position:fixed;
+    position: absolute;
     width: 14%;
     height: 100%;
-    z-index: 2;
+   
     padding-left:30px;
     
     
@@ -47,7 +45,6 @@ a{
     font-size: large;
     padding: 10px;
     margin: 2em;
- 
     flex-direction: column;
     display:block;
     width: 140px;
@@ -55,9 +52,8 @@ a{
     background-color: #20202b;
     word-spacing: 6px;
     border-radius: 15px;
-   
+    position: sticky;
    text-align: center;
-   
 
 }
 
@@ -70,25 +66,26 @@ a+a {
 
 
 
-.div-video-container {
-   
+  .div-video-container {
+
     
     gap: 9rem 1rem;
     margin:0 25rem;
     position:absolute;
     padding: 5rem 0 ; 
-    border-top: 4px solid #222233;
     grid-template-columns: 8ch auto;
+    flex-wrap: wrap;
     
     
     
 }
 
-
 img {
     
     object-fit: cover;
+    
   }
+
 
 
   #movieDescription{
@@ -115,36 +112,46 @@ img {
     }
 
 
-#warning {
-    
-    background-color: rgb(0, 24, 56);
-   
-    text-align: center;
-    color: rgb(243, 215, 215);
-    padding: 16px;
-    
-}
+    #warning {
+        background-color: rgb(0, 24, 56);
+        text-align: center;
+        color: rgb(243, 215, 215);
+        padding: 16px;
+  
+            }
 
 
-.searchbar{
+
+.searchbar {
     display: flex;
-    padding: 1rem 0 ; 
     flex-direction: row;
     justify-content: center;
-   position:fixed;
-  width:100%;
-  text-align: center;
+    width: 100%;
+    position: relative;
+bottom: 110px;
     
+  
+    
+   
 }
-
-
-
 .searchbar button {
-    float:left;
-  background: #ddd;
-  
-  
+    float: left;
+    padding: 6px 10px;
+    margin-top: 8px;
+    
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+  }
+  .searchbar input[type=text] {
+	border: none;
+    padding: 6px;
+	margin-top: 8px;
 }
+
+
+  
+
 
 .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out
