@@ -42,11 +42,6 @@ if(isset($_SESSION["userLoggedIn"])) {
 	</form>
 </div>
 
-
-
-
-
-
 <div class = "div-video-container">
 
 <a href = "watch.php?id=1" > 
@@ -75,12 +70,7 @@ if(isset($_SESSION["userLoggedIn"])) {
 
 
 </div>
-
-
-  
-
-
-    
+ 
 <!--
 Found code how to add github octocat on the website and did it. Couldn't resist.
     -->
@@ -94,8 +84,4 @@ Found code how to add github octocat on the website and did it. Couldn't resist.
         </g>
     </svg>
 </a>
-
-
-
-
 </html>
