@@ -7,25 +7,18 @@ require_once('includes/classes/validation.php');
 
 
 
-
 $validate = new Validation($dbcon);
-
 if(isset($_POST['submit'])){
 
     
-    $email = Sassdata::emailCorrection($_POST['email']);
+    $email = Sassdata::emailCorrection($_POST['email']);  //super global variable which is used to collect form data after submitting an HTML form with method="post"
     $password = Sassdata::pwCorrection($_POST['password']);
   
     
     $loginsuccess = $validate->login($email,$password);
     
     if($loginsuccess){
-
-        $_SESSION["userLoggedIn"] == $email;
-       
         header("Location: indexo.php");
-
-
 }
 
 
