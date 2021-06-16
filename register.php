@@ -5,7 +5,7 @@ require_once("includes/classes/Sassdata.php");
 require_once("includes/classes/connection.php");
 require_once('includes/classes/validation.php');
 
-$validate = new Validation($dbcon);
+$validate = new Validation($dbcon); //creating an instance of the Validation class
 
 if(isset($_POST['submit'])){
 $name = Sassdata::nameCorrection($_POST['first_name']);
@@ -15,15 +15,10 @@ $email = Sassdata::emailCorrection($_POST['email']);
 $pass = Sassdata::pwCorrection($_POST['password']);
 $confirmpassword = Sassdata::pw2Correction($_POST["confirmpassword"]);
 
-$loginsuccess = $validate->ValidationFunc($name,$lastname,$username,$email,$pass,$confirmpassword);
+$loginsuccess = $validate->ValidationFunc($name,$lastname,$username,$email,$pass,$confirmpassword); //STORING THE RESULT OF QUERY EXECUTION
 
 if($loginsuccess ){
-
-    $_SESSION["userLoggedIn"] == $email;
-
-    
     header("Location: indexo.php");
-
 }
 
 }
