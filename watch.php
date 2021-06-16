@@ -13,22 +13,18 @@
 <?php
 
 
-<?php
-    
 require_once("includes/classes/connection.php");
 require_once("includes/classes/vidPlayer.php");
 require_once("includes/classes/video.php");
 
-
-
-$movie = new Video($dbcon , $_GET['id'] );
-
-
-
+$movie = new Video($dbcon , $_GET['id'] );  //creating an instance of the Video class
 $vidPlayer = new vidPlayer($movie);
 
 echo $vidPlayer->stream(true);
 ?>
+
+
+
 
 
 
