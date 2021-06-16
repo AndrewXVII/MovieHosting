@@ -1,13 +1,12 @@
 
 <?php
+
+
 require_once("includes/classes/connection.php");
 require_once("includes/classes/vidPlayer.php");
 require_once("includes/classes/video.php");
 
-if(isset($_SESSION["userLoggedIn"])) {
-    header("Location: indexo.php");
 
-}
 
 ?>
 
@@ -36,11 +35,16 @@ if(isset($_SESSION["userLoggedIn"])) {
        
        
      <div class="searchbar">
-	<form action="/" method="post">
+	<form action="" method="post">
 		<input type="text" placeholder="Search..." name="search">
 		<button type="submit">Search</button>
 	</form>
 </div>
+
+
+
+
+
 
 <div class = "div-video-container">
 
@@ -59,23 +63,24 @@ if(isset($_SESSION["userLoggedIn"])) {
         </a>
 
 
-<a href = "watch.php?id=1" > 
-  <img alt="Harakiri" src="movieDes/images/harakiri.jpg" style="object-fit:cover;  width:300px; height:500px"> 
+<a href = "watch.php?id=3" > 
+  <img alt="Red Beard" src="movieDes/images/read_beard.jpg" style="object-fit:cover;  width:300px; height:500px"> 
         </a>
 
-<a href = "watch.php?id=1" > 
-  <img alt="Harakiri" src="movieDes/images/harakiri.jpg" style="object-fit:cover;  width:300px; height:500px">
+        <a href = "watch.php?id=4" > 
+  <img alt="Where Eagles Dare" src="movieDes/images/where_eagles_dare.png" style="object-fit:cover;  width:300px; height:500px"> 
         </a>
+
 
 
 
 </div>
- 
+
 <!--
 Found code how to add github octocat on the website and did it. Couldn't resist.
     -->
 
-<a href="https://github.com/AndrewXVII/testen" class="github-corner" aria-label="Paskatīt kodu githabā" title="View source on GitHub">
+<a href="https://github.com/AndrewXVII/MovieHosting" class="github-corner" aria-label="View source" title="View source">
     <svg width="90" height="90" viewBox="0 0  250 250" style="fill:#000000; color:rgb(95, 13, 150); position: fixed; bottom: 0; border: 0; right: 0;transform:scale(1,-1)" aria-hidden="true">
         <path d="M0,0 L115,115 L250,250 L250,0 Z"></path>
         <g transform="rotate(-180 130 106) translate(-75 45)">
