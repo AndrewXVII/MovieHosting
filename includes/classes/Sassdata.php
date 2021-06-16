@@ -3,20 +3,23 @@
 class Sassdata{
 
  public static function nameCorrection ($inputBox){  
-//Объявление свойств и методов класса статическими позволяет обращаться к ним без создания экземпляра класса. Свойство класса, объявленное как статическое, не может быть доступно посредством экземпляра класса (но статический метод может быть вызван)
+//Объявление свойств и методов класса статическими позволяет обращаться к ним без создания экземпляра класса. 
+//Свойство класса, объявленное как статическое, не может быть доступно посредством экземпляра класса (но статический метод может быть вызван)
         
         $inputBox = str_replace(" ", "", $inputBox); 
         //trim don't remove spaces inside the string
         $inputBox = htmlentities($inputBox);
         $inputBox = ucfirst($inputBox);
-        $inputBox = filter_var($inputBox, FILTER_SANITIZE_STRING);
+        $inputBox = filter_var($inputBox, FILTER_SANITIZE_STRING); //Remove all HTML tags from a string:
 
+       
   
         return $inputBox;
 }
 public static function usernameCorrection ($inputBox){  
     $inputBox = str_replace(" ", "", $inputBox); 
     $inputBox = htmlentities($inputBox);
+    $inputBox = filter_var($inputBox, FILTER_SANITIZE_STRING);
             return $inputBox;
 
 }
@@ -24,6 +27,7 @@ public static function usernameCorrection ($inputBox){
 public static function lsnameCorrection ($inputBox){  
     $inputBox = str_replace(" ", "", $inputBox); 
     $inputBox = htmlentities($inputBox);
+    $inputBox = filter_var($inputBox, FILTER_SANITIZE_STRING);
             return $inputBox;
 }
 
